@@ -1,15 +1,16 @@
 var CloudmersiveOcrApiClientAsync = require('cloudmersive-ocr-api-client-async');
+var fs = require('fs');
 var defaultClient = CloudmersiveOcrApiClientAsync.ApiClient.instance;
 
 // Configure API key authorization: Apikey
 var Apikey = defaultClient.authentications['Apikey'];
-Apikey.apiKey = 'YOUR API KEY';
+Apikey.apiKey = 'ADD-YOUR-API-KEY-HERE';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Apikey.apiKeyPrefix = 'Token';
 
 var apiInstance = new CloudmersiveOcrApiClientAsync.ImageOcrApi();
 
-var imageFile = "C:\\temp\\ocrsample.jpg"; // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+var imageFile = Buffer.from(fs.readFileSync("C:\\temp\\ocrsample.jpg").buffer); // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
 
 var opts = { 
   'recognitionMode': "Normal", // String | Optional; possible values are 'Basic' which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls; 'Normal' which provides highly fault tolerant OCR recognition uses 14-16 API calls; and 'Advanced' which provides the highest quality and most fault-tolerant recognition uses 28-30 API calls.  Default recognition mode is 'Advanced'
