@@ -9,7 +9,7 @@ Apikey.apiKey = 'YOUR API KEY';
 
 var apiInstance = new CloudmersiveOcrApiClientAsync.ImageOcrApi();
 
-var imageFile = "/path/to/file.txt"; // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+var imageFile = "C:\\temp\\ocrsample.jpg"; // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
 
 var opts = { 
   'recognitionMode': "Normal", // String | Optional; possible values are 'Basic' which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls; 'Normal' which provides highly fault tolerant OCR recognition uses 14-16 API calls; and 'Advanced' which provides the highest quality and most fault-tolerant recognition uses 28-30 API calls.  Default recognition mode is 'Advanced'
